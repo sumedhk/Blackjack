@@ -14,7 +14,7 @@ public class BlackjackGame {
   private UserInterface ui;
 
   public BlackjackGame(UserInterface ui) {
-    this.ui = ui;
+    this.ui= ui;
     ui.setGame(this);
     deck = new CardPile();
     for (int i = 2; i < 15; i++) {
@@ -41,7 +41,7 @@ public class BlackjackGame {
 
   public void play() {
     while (!houseDone || !playerDone) {
-      if (!houseDone) {
+      if(!houseDone) {
         if (score(getHouseCards()) <= 17) {
           getHouseCards().add(deck.removeRandom());
           ui.display();
@@ -91,7 +91,7 @@ public class BlackjackGame {
   }
 
   public static void main(String[] args) {
-    BlackjackGame game = new BlackjackGame(new SimpleUI());
+    BlackjackGame game=new BlackjackGame(new SimpleUI());
     game.start();
     game.play();
     game.end();
